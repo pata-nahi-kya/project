@@ -3,8 +3,6 @@ package TicTacToeFinal;
 public class DrawState implements GameState {
     @Override
     public void next(GameContext context, Player player, boolean hasWon) {
-
-        
     }
 
     @Override

@@ -19,9 +19,10 @@ public class Board {
     Board(int size) { 
         this(size, size);
     }
+
     void playGame(){
     }
-    
+
     boolean isValidMove(PositionTicTacToe position){
         if (position.getRow() < 0 || position.getRow() > rows || position.getCol() < 0 || position.getCol() > columns) {
             return false; // Position is out of bounds
@@ -36,8 +37,7 @@ public class Board {
             System.out.println("Invalid move! Try again.");
         }
     }
-    
-    
+     
      public void printBoard() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -136,5 +136,6 @@ public class Board {
         return true; // All symbols are the same and not EMPTY, it's a winning line
     }
 
+    
 
 }

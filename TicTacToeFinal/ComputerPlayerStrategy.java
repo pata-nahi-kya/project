@@ -1,5 +1,7 @@
 package TicTacToeFinal;
 
+import java.util.ArrayList;
+
 public class ComputerPlayerStrategy extends Player {
     Symbol playerSymbol;
     String playerName;
@@ -12,13 +14,23 @@ public class ComputerPlayerStrategy extends Player {
 
     @Override
     public PositionTicTacToe makeMove(Board board) {
-        System.out.println(playerName + " enter your move (row and column): ");
-        int length = board.availablePositions.size();
-         if(length == 0){
+        System.out.println(playerName + " is thinking...");
+        
+        // Get available positions
+        ArrayList<PositionTicTacToe> availablePositions = board.getAvailablePositions();
+        
+        if (availablePositions.isEmpty()) {
             System.out.println("No available positions left!");
-            return null; // or handle as needed
+            return null;
         }
-        int index = (int) (Math.random() * length);
-        return board.availablePositions.get(index);
+        
+        // Random selection
+        int randomIndex = (int) (Math.random() * availablePositions.size());
+        PositionTicTacToe selectedPosition = availablePositions.get(randomIndex);
+        
+        System.out.println(playerName + " chooses position: (" + 
+                          selectedPosition.getRow() + ", " + selectedPosition.getCol() + ")");
+        
+        return selectedPosition;
     }
 }

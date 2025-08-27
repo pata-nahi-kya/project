@@ -27,7 +27,7 @@ public class Board {
     }
 
     boolean isValidMove(PositionTicTacToe position){
-        if (position.getRow() < 0 || position.getRow() > rows || position.getCol() < 0 || position.getCol() > columns) {
+        if (position.getRow() < 0 || position.getRow() >= rows || position.getCol() < 0 || position.getCol() >= columns) {
             return false; // Position is out of bounds
         }
         return grid[position.getRow()][position.getCol()] == Symbol.EMPTY; // Check if the cell is empty
@@ -148,6 +148,6 @@ public class Board {
                 }
             }
         }
-        return availablePositions;
+        return new ArrayList<>(availablePositions);
     }
 }

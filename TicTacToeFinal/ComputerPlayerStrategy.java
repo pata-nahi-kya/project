@@ -1,9 +1,12 @@
 package TicTacToeFinal;
 
-public class ComputerPlayerStrategy implements PlayerStrategy {
+public class ComputerPlayerStrategy extends Player {
+    Symbol playerSymbol;
     String playerName;
 
-    ComputerPlayerStrategy(String playerName) {
+    ComputerPlayerStrategy(String playerName, Symbol playerSymbol) {
+        super(playerName, playerSymbol);
+        this.playerSymbol = playerSymbol;
         this.playerName = playerName;
     }
 

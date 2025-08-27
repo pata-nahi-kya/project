@@ -22,18 +22,18 @@ public class Player implements PlayerStrategy {
 
     @Override
     public PositionTicTacToe makeMove(Board board) {
-        while(true){
+        while (true) {
             System.out.println(name + " (" + symbol + "), enter your move (row and column): ");
             int row = sc.nextInt();
             int col = sc.nextInt();
             PositionTicTacToe position = new PositionTicTacToe(row, col);
-            if(board.isValidMove(position)){
+            if (board.isValidMove(position)) {
                 return position;
-            }else{
+            } else {
                 System.out.println("Invalid move. Try again.");
             }
         }
-        
+
     }
-    
+
 }

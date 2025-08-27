@@ -1,9 +1,12 @@
 package TicTacToeFinal;
 
+import java.util.ArrayList;
+
 public class Board {
     private final int rows ;
     private final int columns;
     private final Symbol[][] grid;
+    ArrayList<PositionTicTacToe> availablePositions = new ArrayList<>();
 
     Board(int rows , int columns ){
         this.rows = rows;
@@ -136,6 +139,15 @@ public class Board {
         return true; // All symbols are the same and not EMPTY, it's a winning line
     }
 
-    
-
+    ArrayList<PositionTicTacToe> getAvailablePositions() {
+        availablePositions.clear();
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (grid[i][j] == Symbol.EMPTY) {
+                    availablePositions.add(new PositionTicTacToe(i, j));
+                }
+            }
+        }
+        return availablePositions;
+    }
 }

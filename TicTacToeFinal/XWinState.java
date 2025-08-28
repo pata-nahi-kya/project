@@ -5,9 +5,7 @@ public class XWinState implements GameState {
 
     @Override
     public void next(GameContext context, Player player, boolean hasWon) {
-
     }
-    
 
     @Override
     public boolean isGameOver() {

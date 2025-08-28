@@ -10,7 +10,6 @@ public class OTurnState implements GameState {
             return;
         } else {
             context.setState(new XTurnState());
-
         }
     }
 

@@ -6,7 +6,7 @@ public class ATMStateFactory {
     private ATMStateFactory() {
     }
 
-    public ATMStateFactory getInstance() {
+    public static ATMStateFactory getInstance() {
         if (instance == null) {
             instance = new ATMStateFactory();
         }

@@ -3,7 +3,7 @@ public class Card {
     String cardNumber;
     int pin;
     String accountNumber;
-    Card(String cardNumber, int pin, String accountNumber) {
+    public Card(String cardNumber, int pin, String accountNumber) {
         this.cardNumber = cardNumber;
         this.pin = pin;
         this.accountNumber = accountNumber;

@@ -12,9 +12,10 @@ public class IdleState implements ATMState {
 
     @Override
     public ATMState next(ATMMachineContext context){
-        if(context.getCurrentCard != null){
+        if(context.getCurrentCard() != null){
             return context.getStateFactory().createHasCardState();
         }
+        return this;
     }
-    return this;
+    
 }

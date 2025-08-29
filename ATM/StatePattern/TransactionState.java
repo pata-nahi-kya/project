@@ -12,7 +12,7 @@ public class TransactionState implements ATMState{
 
 
     @Override
-    public ATMState next(ATMMachine context) {
+    public ATMState next(ATMMachineContext context) {
         if(context.getCurrentCard() == null){
             return context.getStateFactory().createIdleState();
         }

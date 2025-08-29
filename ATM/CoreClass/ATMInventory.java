@@ -1,12 +1,13 @@
 package CoreClass;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class ATMInventory {
     private Map<CashType, Integer> cashInventory;
 
     public ATMInventory() {
-        cashInventory = new Map<>(CashType.class);
+        cashInventory = new HashMap<>();
         for (CashType type : CashType.values()) {
             cashInventory.put(type, 0);
         }
@@ -20,7 +21,7 @@ public class ATMInventory {
         if(!hasSufficientCash(amount)){
             return null;
         }
-        Map<CashType, Integer> dispensed = new Map<>(CashType.class);
+        Map<CashType, Integer> dispensed = new HashMap<>();
         int remainingAmount = amount;
 
         for (CashType type : CashType.values()) {
